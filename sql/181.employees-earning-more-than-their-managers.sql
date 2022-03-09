@@ -3,11 +3,14 @@
 --
 -- [181] Employees Earning More Than Their Managers
 --
-
 -- @lc code=start
 # Write your MySQL query statement below
-select a.Name as Employee from Employee a inner join Employee b on
-a.ManagerId=b.Id
-where a.Salary>b.Salary  
--- @lc code=end
+SELECT
+    a.Name AS Employee
+FROM
+    Employee a
+    INNER JOIN Employee b ON a.ManagerId = b.Id
+WHERE
+    a.Salary > b.Salary;
 
+-- @lc code=end

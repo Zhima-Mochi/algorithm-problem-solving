@@ -3,11 +3,14 @@
 --
 -- [183] Customers Who Never Order
 --
-
 -- @lc code=start
 # Write your MySQL query statement below
-select Name Customers from Customers a left join Orders b
-on a.Id=b.CustomerId
-where b.CustomerId is null;
--- @lc code=end
+SELECT
+    Name Customers
+FROM
+    Customers a
+    LEFT JOIN Orders b ON a.Id = b.CustomerId
+WHERE
+    b.CustomerId IS NULL;
 
+-- @lc code=end

@@ -3,11 +3,16 @@
 --
 -- [620] Not Boring Movies
 --
-
 -- @lc code=start
 # Write your MySQL query statement below
-select * from Cinema 
-where description !='boring' and id%2
-order by rating desc; 
--- @lc code=end
+SELECT
+    *
+FROM
+    Cinema
+WHERE
+    description != 'boring'
+    AND id % 2
+ORDER BY
+    rating DESC;
 
+-- @lc code=end
