@@ -4,7 +4,7 @@
  * [16] 3Sum Closest
  */
 #include <vector>
-#include < algorithm>
+#include <algorithm>
 using namespace std;
 // @lc code=start
 class Solution
@@ -12,7 +12,7 @@ class Solution
 public:
     int threeSumClosest(vector<int> &nums, int target)
     {
-        int res = 1001;
+        int res = 10001;
         sort(nums.begin(), nums.end());
         int len = nums.size();
         if (target > nums[len - 1] + nums[len - 2] + nums[len - 3])
