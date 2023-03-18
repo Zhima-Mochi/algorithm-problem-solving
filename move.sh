@@ -2,6 +2,10 @@
 
 # Loop through each file in the current directory
 for file in *; do
+    # Check if the file is the script itself or the README file
+    if [ "$file" == "move.sh" ] || [ "$file" == "README.md" ]; then
+        continue
+    fi
     # Check if the file is actually a file (not a directory or other special file)
     if [ -f "$file" ]; then
         # Get the file extension
