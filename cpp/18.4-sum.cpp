@@ -10,7 +10,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<vector<int>> fourSum(vector<int> &nums, int target)
+     vector<vector<int>> fourSum(vector<int> &nums, int target)
     {
         vector<vector<int>> res;
         int len = nums.size();
@@ -39,11 +39,11 @@ public:
         {
             return;
         }
-        if (target < 3 * nums[left_ind] || target > 3 * nums[right_ind])
+        if (target < 3L * nums[left_ind] || target > 3L * nums[right_ind])
         {
             return;
         }
-        for (int i = left_ind; i != right_ind - 1 && 3 * nums[i] <= target; ++i)
+        for (int i = left_ind; i != right_ind - 1 && 3L * nums[i] <= target; ++i)
         {
             if (i > left_ind && nums[i] == nums[i - 1])
             {
