@@ -9,12 +9,13 @@ using namespace std;
 class Solution
 {
 public:
-//O(log(n)) time complexity
+    // O(log(n)) time complexity
     double myPow(double x, int n)
     {
         long double res = 1;
-        auto step = 1;
-        if (n == 0)
+        long long num = n;
+        long long step = 1;
+        if (num == 0)
         {
             return res;
         }
@@ -24,30 +25,32 @@ public:
         }
         else if (x == -1)
         {
-            return -2 * (n % 2) + 1;
+            return -2 * (num % 2) + 1;
         }
-        if (n < 0)
+        if (num < 0)
         {
-            res/=x;
-            ++n *= -1;
+            res /= x;
+            ++num *= -1;
             x = 1 / x;
         }
         long double multiplier = x;
-        while (n > 0)
+        while (num > 0)
         {
-            while (n - 2 * step >= 0)
+            while (num - 2 * step >= 0)
             {
                 multiplier *= multiplier;
-                if (abs(multiplier - 1) < 1e-10)
+                if (abs(multiplier - 1) < 1e-15)
                 {
                     return res;
-                }else if(abs(res*multiplier)<1e-10){
+                }
+                else if (abs(res * multiplier) < 1e-15)
+                {
                     return 0;
                 }
                 step *= 2;
             }
             res *= multiplier;
-            n -= step;
+            num -= step;
             step = 1;
             multiplier = x;
         }
