@@ -3,22 +3,22 @@
  *
  * [458] Poor Pigs
  */
-#include <unordered_map>
-#include <cmath>
+#include<unordered_map>
+#include<cmath>
 using namespace std;
-// @lc code=start
 
-// Information theorem
-// log_2(times+1) bit information per pig
-// log_2(buckets) bit total information 
+// @lc code=start
 class Solution
 {
+    unordered_map<int, int> record;
+
 public:
     int poorPigs(int buckets, int minutesToDie, int minutesToTest)
     {
         int times = minutesToTest / minutesToDie;
-        int res = ceil(log(buckets) / log(times + 1));
+        int res = ceil(log(buckets) / log(times + 1) - 1e-5);
         return res;
     }
 };
 // @lc code=end
+
