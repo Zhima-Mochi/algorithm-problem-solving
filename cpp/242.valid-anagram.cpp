@@ -4,6 +4,7 @@
  * [242] Valid Anagram
  */
 #include <string>
+#include <vector>
 using namespace std;
 // @lc code=start
 class Solution
@@ -11,7 +12,7 @@ class Solution
 public:
     bool isAnagram(string s, string t)
     {
-        string count(26, ' ');
+        vector<int> count(26, 0);
         for (auto &n : s)
         {
             ++count[n - 'a'];
@@ -20,7 +21,7 @@ public:
         {
             --count[n - 'a'];
         }
-        return count == string(26, ' ');
+        return count == vector<int>(26, 0);
     }
 };
 // @lc code=end
