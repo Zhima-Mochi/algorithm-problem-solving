@@ -35,3 +35,4 @@ class Solution:
             if len(res) > 1:
                 return False
         return True
+# @lc code=end
