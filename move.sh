@@ -3,7 +3,12 @@
 # Loop through each file in the current directory
 for file in *; do
     # Check if the file is the script itself or the README file
-    if [ "$file" == "move.sh" ] || [ "$file" == "README.md" ]; then
+    # Get the file extension
+    extension="${file##*.}"
+    # Define a list of common programming language extensions
+    common_extensions=("py" "js" "java" "c" "cpp" "cs" "go" "rb" "php" "swift" "kt" "rs" "sh" "md")
+    # If the file is the script itself, the README file, or has an uncommon extension, skip it
+    if [ "$file" == "move.sh" ] || [ "$file" == "README.md" ] || [[ ! " ${common_extensions[@]} " =~ " ${extension} " ]]; then
         continue
     fi
     # Check if the file is actually a file (not a directory or other special file)
